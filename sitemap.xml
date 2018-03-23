@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://cbenitez81.github.io/</loc>
+    <loc>https://cbenitez81.github.io/blogv4/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cbenitez81.github.io/categories/</loc>
+    <loc>https://cbenitez81.github.io/blogv4/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cbenitez81.github.io/tags/</loc>
+    <loc>https://cbenitez81.github.io/blogv4/tags/</loc>
     <priority>0</priority>
   </url>
   
