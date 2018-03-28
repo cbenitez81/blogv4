@@ -1,531 +1,222 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <title>(Hu)go Template Primer </title>
 
-<html>
-    <head>
-        <script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": "https://cbenitez81.github.io/blogv4/"
-        },
-        "articleSection" : "blog",
-        "name" : "(Hu)go Template Primer",
-        "headline" : "(Hu)go Template Primer",
-        "description" : "Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.",
-        "inLanguage" : "en",
-        "author" : "",
-        "creator" : "",
-        "publisher": "",
-        "accountablePerson" : "",
-        "copyrightHolder" : "",
-        "copyrightYear" : "2014",
-        "datePublished": "2014-04-02 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2014-04-02 00:00:00 &#43;0000 UTC",
-        "url" : "https://cbenitez81.github.io/blogv4/blog/goisforlovers/",
-        "wordCount" : "1487",
-        "keywords" : [ "Blog" ]
-    }
-    </script>
+
+
+<meta name="description" content="Describe your website">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+<link rel="stylesheet" href="https://example.org/css/font-awesome.min.css" type='text/css' media='all'>
+
+<link href="https://example.org/css/style.css" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://example.org/css/custom.css" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://example.org/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://example.org/img/favicon.ico" type="image/x-icon">
+
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
         
-            
-                <title>(Hu)go Template Primer</title>
-            
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/go">Go</a>
+        </li>
         
-
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.37" />
-        
-
-
-        
-            <meta name="author" content="Unknown Author">
-        
-        
-            
-                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
-            
-        
-
-        <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="(Hu)go Template Primer"/>
-<meta name="twitter:description" content="Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates."/>
-<meta name="twitter:site" content="@example"/>
-
-        <meta property="og:title" content="(Hu)go Template Primer" />
-<meta property="og:description" content="Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cbenitez81.github.io/blogv4/blog/goisforlovers/" />
-
-
-
-<meta property="article:published_time" content="2014-04-02T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2014-04-02T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
-
-        <meta property="og:image" content="https://cbenitez81.github.io/blogv4//images/logo.png">
-        <meta property="og:image:type" content="image/png">
-        <meta property="og:image:width" content="512">
-        <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="(Hu)go Template Primer">
-<meta itemprop="description" content="Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.">
-
-
-<meta itemprop="datePublished" content="2014-04-02T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2014-04-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1487">
-
-
-
-<meta itemprop="keywords" content="" />
-
-        
-
-        
-            
-        
-
-        
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
-            <link rel="stylesheet" href="https://cbenitez81.github.io/blogv4/css/main.css">
-            <link rel="stylesheet" href="https://cbenitez81.github.io/blogv4/css/add-on.css">
-            <link rel="stylesheet" href="https://cbenitez81.github.io/blogv4/css/academicons.min.css">
-        
-
-        
-            
-                
-            
-        
-
-
-  
-    
-
-
-      
-    </head>
-    <body>
-
-      
-      <div id="wrapper">
-
-    
-    
-<header id="header">
-    
-      <h1><a href="https://cbenitez81.github.io/blogv4/">blog</a></h1>
-    
-
-    <nav class="links">
-        <ul>
-            
-                <li>
-                    <a href="https://cbenitez81.github.io/blogv4/">
-                            <i class="fa fa-home">&nbsp;</i>Home
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="https://cbenitez81.github.io/blogv4/about/">
-                            <i class="fa fa-id -card-o">&nbsp;</i>About
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="https://cbenitez81.github.io/blogv4/blog/">
-                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="https://cbenitez81.github.io/blogv4/itemized/">
-                            <i class="fa fa-list">&nbsp;</i>Itemized
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="https://cbenitez81.github.io/blogv4/categories/">
-                            <i class="fa fa-sitemap">&nbsp;</i>Categories
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="https://cbenitez81.github.io/blogv4/contact/">
-                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
-                    </a>
-                </li>
-            
-        </ul>
-    </nav>
-    <nav class="main">
-        <ul>
-            
-            <li id="share-nav" class="share-menu" style="display:none;">
-                <a class="fa-share-alt" href="#share-menu">Share</a>
-            </li>
-            
-            <li class="search">
-                <a class="fa-search" href="#search">Search</a>
-                <form id="search" method="get" action="//google.com/search">
-                    <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://cbenitez81.github.io/blogv4/">
-                </form>
-            </li>
-            <li class="menu">
-                <a class="fa-bars" href="#menu">Menu</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-
-
-<section id="menu">
-
-    
-        <section>
-            <form class="search" method="get" action="//google.com/search">
-                <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://cbenitez81.github.io/blogv4/">
-            </form>
-        </section>
-
-    
-        <section>
-            <ul class="links">
-                
-                    <li>
-                        <a href="https://cbenitez81.github.io/blogv4/">
-                            <h3>
-                                <i class="fa fa-home">&nbsp;</i>Home
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://cbenitez81.github.io/blogv4/about/">
-                            <h3>
-                                <i class="fa fa-id -card-o">&nbsp;</i>About
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://cbenitez81.github.io/blogv4/blog/">
-                            <h3>
-                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://cbenitez81.github.io/blogv4/itemized/">
-                            <h3>
-                                <i class="fa fa-list">&nbsp;</i>Itemized
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://cbenitez81.github.io/blogv4/categories/">
-                            <h3>
-                                <i class="fa fa-sitemap">&nbsp;</i>Categories
-                            </h3>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://cbenitez81.github.io/blogv4/contact/">
-                            <h3>
-                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
-                            </h3>
-                        </a>
-                    </li>
-                
-            </ul>
-        </section>
-
-    
-        <section class="recent-posts">
-            <div class="mini-posts">
-                <header>
-                    <h3>Recent Posts</h3>
-                </header>
-                
-
-                
-                    
-                
-
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="https://cbenitez81.github.io/blogv4/blog/goisforlovers/">(Hu)go Template Primer</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2014-04-02'>
-                                    April 2, 2014</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-
-        
-        
-        
-
-        <a href="https://cbenitez81.github.io/blogv4/blog/goisforlovers/" class="image featured">
-            <img src="https://cbenitez81.github.io/blogv4/img/2014/042014/04/pic02.jpg" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-
-                
-            </div>
-        </section>
-
-    
-        
-</section>
-
-    <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-
-<li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f&amp;text=%28Hu%29go%20Template%20Primer&amp;via=example" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f&amp;title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-
-
-
-
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f&amp;description=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-
-
-
-        </ul>
-    </section>
-</section>
-
-    
-    <div id="main">
-        
-        
-        <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="https://cbenitez81.github.io/blogv4/blog/goisforlovers/">(Hu)go Template Primer</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2014-04-02'>
-            April 2, 2014</time>
-        <span class="author">Unknown Author</span>
-        
-            <p>7 minute read</p>
-        
-        
-    </div>
-</header>
-
-
-  
-    <section id="social-share">
-      <ul class="icons">
-        
-
-
-
-<li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f&amp;text=%28Hu%29go%20Template%20Primer&amp;via=example" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f&amp;title=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-
-
-
-
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcbenitez81.github.io%2fblogv4%2fblog%2fgoisforlovers%2f&amp;description=%28Hu%29go%20Template%20Primer" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-
-
 
       </ul>
-    </section>
-  
 
-  
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20facebook" data-animate-hover="pulse" class="facebook" target="_blank">
+        <i class="fa fa-facebook-square" title="facebook"></i>
+        <span class="screen-reader-text">facebook</span>
+      </a>
+    </li>
     
 
     
-        
-        
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-
-        
-        
-        
-
-        <a href="https://cbenitez81.github.io/blogv4/blog/goisforlovers/" class="image featured">
-            <img src="https://cbenitez81.github.io/blogv4/img/2014/04/pic02.jpg" alt="">
-        </a>
+    <li>
+      <a href="full%20profile%20url%20in%20googleplus" data-animate-hover="pulse" class="gplus" target="_blank">
+        <i class="fa fa-google-plus" title="googleplus"></i>
+        <span class="screen-reader-text">googleplus</span>
+      </a>
+    </li>
     
 
-
-  <div id="content">
     
+    <li>
+      <a href="full%20profile%20url%20in%20twitter" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fa fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20instagram" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fa fa-instagram" title="instagram"></i>
+        <span class="screen-reader-text">instagram</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="mailto:email@example.com" data-animate-hover="pulse" class="email">
+        <i class="fa fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20linkedin" data-animate-hover="pulse" class="linkedin" target="_blank">
+        <i class="fa fa-linkedin" title="linkedin"></i>
+        <span class="screen-reader-text">linkedin</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20stackoverflow" data-animate-hover="pulse" class="stackoverflow" target="_blank">
+        <i class="fa fa-stack-overflow" title="stackoverflow"></i>
+        <span class="screen-reader-text">stackoverflow</span>
+      </a>
+    </li>
+    
+
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20github" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fa fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        <div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> Nederburg </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">A fast &amp; secure theme</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        <li id="menu-item" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item">
+          <a href="/">Home</a>
+        </li>
+
+        
+        
+        
+        
+        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item">
+          <a href="/about/">About</a>
+        </li>
+        
+        
+        
+        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item">
+          <a href="/contact/">Get in touch</a>
+        </li>
+        
+        
+      </ul>
+
+
+
+    </div>
+
+  </div>
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+<div id="loop-container" class="loop-container">
+
+
+<div class="post type-post status-publish format-standard hentry category-standard category-travel entry full-without-featured odd excerpt-1">
+
+
+<div class="entry-meta">
+  <span class="date">April 02</span>	<span> / </span>
+
+  <span class="author">
+    
+    <a href="https://appernetic.io/" title="Posts by Göran Svensson" rel="author">Göran Svensson</a>
+    
+  </span>
+
+
+    
+      <span class="category">
+     <span> / </span>
+
+     <a href="/categories/Go">Go</a>
+  </span>
+   
+
+
+</div>
+<div class='entry-header'>
+<h1 class='entry-title'> (Hu)go Template Primer</h1>
+</div>
+<div class="entry-container">
+<div class="entry-content">
+  <article>
+  
 
 <p>Hugo uses the excellent <a href="http://golang.org/&gt;">go</a> <a href="http://golang.org/pkg/html/template/&gt;">html/template</a> library for
 its template engine. It is an extremely lightweight engine that provides a very
@@ -583,7 +274,7 @@ functions.</p>
 <p>Each go template has a struct (object) made available to it. In hugo each
 template is passed either a page or a node struct depending on which type of
 page you are rendering. More details are available on the
-<a href="https://cbenitez81.github.io/blogv4/layout/variables">variables</a> page.</p>
+<a href="/layout/variables">variables</a> page.</p>
 
 <p>A variable is accessed by referencing the variable name.</p>
 
@@ -600,7 +291,7 @@ page you are rendering. More details are available on the
 
 <p>Go template ship with a few functions which provide basic functionality. The go
 template system also provides a mechanism for applications to extend the
-available functions with their own. <a href="https://cbenitez81.github.io/blogv4/layout/functions">Hugo template
+available functions with their own. <a href="/layout/functions">Hugo template
 functions</a> provide some additional functionality we believe
 are useful for building websites. Functions are called by using their name
 followed by the required parameters separated by spaces. Template
@@ -792,7 +483,7 @@ you want to inside of your templates.</p>
 <h2 id="using-content-page-parameters">Using Content (page) Parameters</h2>
 
 <p>In each piece of content you can provide variables to be used by the
-templates. This happens in the <a href="https://cbenitez81.github.io/blogv4/content/front-matter">front matter</a>.</p>
+templates. This happens in the <a href="/content/front-matter">front matter</a>.</p>
 
 <p>An example of this is used in this documentation site. Most of the pages
 benefit from having the table of contents provided. Sometimes the TOC just
@@ -867,471 +558,236 @@ so, such as in this example:</p>
 &lt;/nav&gt;
 </code></pre>
 
-  </div>
+          </article>
+</div>
 
-  <footer>
-    <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://cbenitez81.github.io/blogv4/categories/go">Go</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
+<div class='entry-meta-bottom'>
+  
 
-  </footer>
+<div class="entry-categories"><p><span>Categories</span>
 
-</article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "cfbq" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
+  <a href="/categories/go" title="View all posts in Go">Go</a>
+</p>
+</div>
 
 
-<ul class="actions pagination">
-    
 
-    
-</ul>
+<div class="entry-tags"><p><span>Tags</span>
 
+
+</p></div>	</div>
+<div class="author-meta">
+
+<div class="author">
+  <img alt='Göran Svensson' src="https://www.gravatar.com/avatar/855a7543724a3b5c481954390a4bce81?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+
+	<span>
+  Written by:<a href="https://appernetic.io/" title="Posts by Göran Svensson" rel="author">Göran Svensson</a>        </span>
+</div>
+<div class="bio">
+  
+    <p>Göran is an avid blogger and the founder of <a href='https://appernetic.io/'>Appernetic.io</a>. This is the author bio shown after posts.</p>
+  
+
+
+
+<a class="facebook" target="_blank"
+href="full%20profile%20url%20in%20facebook">
+<i class="fa fa-facebook"
+ title="facebook icon"></i>
+</a>
+
+
+
+<a class="googleplus" target="_blank"
+href="full%20profile%20url%20in%20googleplus">
+<i class="fa fa-google-plus"
+ title="googleplus icon"></i>
+</a>
+
+
+
+
+      <a class="twitter" target="_blank"
+     href="full%20profile%20url%20in%20twitter">
+    <i class="fa fa-twitter-square"
+       title="twitter icon"></i>
+  </a>
+
+  
+        <a class="linkedin" target="_blank"
+     href="full%20profile%20url%20in%20linkedin">
+    <i class="fa fa-linkedin-square"
+       title="linkedin icon"></i>
+  </a>
+
+
+
+<a class="email" target="_blank"
+href="mailto:email@example.com">
+<i class="fa fa-envelope"
+title="email icon"></i>
+</a>
+
+
+  
+        <a class="instagram" target="_blank"
+     href="full%20profile%20url%20in%20instagram">
+    <i class="fa fa-instagram"
+       title="instagram icon"></i>
+  </a>
+  
+
+  
+  <a class="stackoverflow" target="_blank"
+href="full%20profile%20url%20in%20stackoverflow">
+<i class="fa fa-stack-overflow"
+ title="stackoverflow icon"></i>
+</a>
+  
+
+  
+  <a class="github" target="_blank"
+href="full%20profile%20url%20in%20github">
+<i class="fa fa-github"
+ title="github icon"></i>
+</a>
+  
 
     </div>
-    
-<section id="sidebar">
+</div>	</div>
+</div>
 
-  
-  <section id="intro">
-    
-    
-      
-        <a href='https://cbenitez81.github.io/blogv4/' class="logo"><img src="https://cbenitez81.github.io/blogv4/img/main/logo.jpg" alt="Hugo Future Inperfect" /></a>
-      
-    
-    
-      <header>
-        <h2>Desde aca para alla</h2>
-        <p>Just random ideas</p>
-      </header>
-    
-    
-      <ul class="icons">
-        
-          
-    <li><a href="https://cbenitez81.github.io/blogv4/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
-
-
-        
-        
-  <li><a href="//github.com/jpescador/hugo-future-imperfect" target="_blank" title="GitHub" class="fa fa-github"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//flickr.com/photos/example" target="_blank" title="Flickr" class="fa fa-flickr"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//linkedin.com/in/example" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
-
-
-
-  <li><a href="//linkedin.com/company/examplebusiness" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-  <li><a href="//facebook.com/example" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
-
-
-
-
-
-  <li><a href="//reddit.com/user/example" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//instagram.com/example" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
-
-
-
-
-
-  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
-
-
-
-
-
-
-
-  <li><a href="//pinterest.com/example" target="_blank" title="Pinterest" class="fa fa-pinterest-p"></a></li>
-
-
-
-  <li><a href="//telegram.me/example" target="_blank" title="telegram" class="fa fa-telegram"></a></li>
-
-
-
-
-
-
-
-
-
-<li><a href="//researchgate.net/profile/example" target="_blank" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
-
-
-
-  <li><a href="mailto:example" title="Email" class="fa fa-envelope"></a></li>
-
-
-      </ul>
-    
-  </section>
-
-  
-  <section class="recent-posts">
-    <div class="mini-posts">
-      <header>
-        <h3>Recent Posts</h3>
-      </header>
-      <div class="posts-container">
-        
-
-        
-          
-        
-
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="https://cbenitez81.github.io/blogv4/blog/goisforlovers/">(Hu)go Template Primer</a>
-              </h3>
-              
-              <time class="published" datetime='2014-04-02'>
-                April 2, 2014
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-
-        
-        
-        
-
-        <a href="https://cbenitez81.github.io/blogv4/blog/goisforlovers/" class="image featured">
-            <img src="https://cbenitez81.github.io/blogv4/img/2014/04/pic02.jpg" alt="">
-        </a>
+<section id="comments" class="comments">
     
 
 
-          </article>
-        
-      </div>
 
-      
-    </div>
-  </section>
 
-  
-  
-  
-  
-  
-    <section id="categories">
-      <header>
-        <h3>
-          <a href="https://cbenitez81.github.io/blogv4/categories/">Categories</a>
-        </h3>
-      </header>
-        
-          
-        
 
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="https://cbenitez81.github.io/blogv4/categories/go/">Go</a>
-                <span style="float:right;">1</span>
-              
-            </header>
-          </article>
-        </p>
-        
-    </section>
-  
-  
 
-  
-  
-    <section id="mini-bio">
-      <h3>About</h3>
-      <p>Occasional blogger, machine learning and data science</p>
-      <a href="https://cbenitez81.github.io/blogv4/about/" class="button">Learn More</a>
-    </section>
-  
-
-  
-  <section id="footer">
-    
-      <ul class="icons">
-        
-          
-    <li><a href="https://cbenitez81.github.io/blogv4/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
-
-
-        
-        
-  <li><a href="//github.com/jpescador/hugo-future-imperfect" target="_blank" title="GitHub" class="fa fa-github"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//flickr.com/photos/example" target="_blank" title="Flickr" class="fa fa-flickr"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//linkedin.com/in/example" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
-
-
-
-  <li><a href="//linkedin.com/company/examplebusiness" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-  <li><a href="//facebook.com/example" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
-
-
-
-
-
-  <li><a href="//reddit.com/user/example" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <li><a href="//instagram.com/example" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
-
-
-
-
-
-  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
-
-
-
-
-
-
-
-  <li><a href="//pinterest.com/example" target="_blank" title="Pinterest" class="fa fa-pinterest-p"></a></li>
-
-
-
-  <li><a href="//telegram.me/example" target="_blank" title="telegram" class="fa fa-telegram"></a></li>
-
-
-
-
-
-
-
-
-
-<li><a href="//researchgate.net/profile/example" target="_blank" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
-
-
-
-  <li><a href="mailto:example" title="Email" class="fa fa-envelope"></a></li>
-
-
-      </ul>
-    
-    <p class="copyright">
-      
-        &copy; 2014
-        
-          Hugo Future Imperfect
-        
-      .
-      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
-    </p>
-  </section>
 </section>
+</div>
+
+ 
+
+
 
     </div>
-    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
-    
 
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+	<h1>
     
-      
+    <a href=""> Nederburg </a>
     
+	</h1>
 
-    
-      
-      
-      
-        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+			
+			<p class="site-description">A fast &amp; secure theme</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
         
+        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a href="/">Home</a></li>
         
+        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a href="/about/">About</a></li>
         
-        <script src="//cdn.bootcss.com/highlight.js//languages/r.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js//languages/yaml.min.js"></script>
-        <script src="//cdn.bootcss.com/highlight.js//languages/css.min.js"></script>
-        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
-      
-    
-    
-    
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
-      <script src="https://cbenitez81.github.io/blogv4/js/util.js"></script>
-      <script src="https://cbenitez81.github.io/blogv4/js/main.js"></script>
-      <script src="https://cbenitez81.github.io/blogv4/js/backToTop.js"></script>
-    
-
-    
-      
+        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a href="/contact/">Get in touch</a></li>
         
-      
-    
+</ul>
 
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-      <script src="//yihui.name/js/math-code.js"></script>
-<script async
-src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+				<li>
+					<a class="facebook" target="_blank"
+					   href="full%20profile%20url%20in%20facebook" >
+						<i class="fa fa-facebook" title="facebook"></i>
+						<span class="screen-reader-text">facebook</span>
+					</a>
+				</li>
+        
+
+        
+				<li>
+					<a class="googleplus" target="_blank"
+					   href="full%20profile%20url%20in%20googleplus" >
+						<i class="fa fa-google-plus" title="googleplus"></i>
+						<span class="screen-reader-text">googleplus</span>
+					</a>
+				</li>
+        
 
 
-  </body>
+        
+        <li>
+        <a href="full%20profile%20url%20in%20twitter"  class="twitter" target="_blank">
+            <i class="fa fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="full%20profile%20url%20in%20instagram"  class="twitter" target="_blank">
+            <i class="fa fa-instagram" title="instagram"></i>
+            <span class="screen-reader-text">instagram</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="mailto:email@example.com"  class="email">
+            <i class="fa fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="full%20profile%20url%20in%20linkedin" class="linkedin" target="_blank">
+            <i class="fa fa-linkedin" title="linkedin"></i>
+            <span class="screen-reader-text">linkedin</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="full%20profile%20url%20in%20stackoverflow"  class="stackoverflow" target="_blank">
+            <i class="fa fa-stack-overflow" title="stackoverflow"></i>
+            <span class="screen-reader-text">stackoverflow</span>
+        </a>
+        </li>
+        
+
+
+        
+        <li>
+        <a href="full%20profile%20url%20in%20github"  class="github" target="_blank">
+            <i class="fa fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+				</ul>	<div class="design-credit">
+		<p>
+			Nederburg Hugo Theme by <a target="_blank" href="https://appernetic.io">Appernetic</a>.</p><p>A port of Tracks by Compete Themes.</p>
+	</div>
+</footer>
+
+  </div>
+  <script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquerymigrate.js"></script>
+<script src="https://example.org/js/production.min.js"></script>
+
+</body>
 </html>
-
