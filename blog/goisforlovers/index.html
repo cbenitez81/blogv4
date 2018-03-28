@@ -1,222 +1,61 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
- <title>(Hu)go Template Primer </title>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hugo Theme Dream</title>
+
+  
+  
+  <meta name="author" content="Unknown Author" />
+  <meta name="description" content="Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates." />
 
 
 
-<meta name="description" content="Describe your website">
 
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="all,follow">
-<meta name="googlebot" content="index,follow,snippet,archive">
-<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
-<link rel="stylesheet" href="https://example.org/css/font-awesome.min.css" type='text/css' media='all'>
+<meta name="generator" content="Hugo 0.37" />
 
-<link href="https://example.org/css/style.css" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://example.org/css/custom.css" rel="stylesheet" type='text/css' media='all'>
-<link rel="shortcut icon" href="https://example.org/img/favicon.ico" type="image/x-icon">
-<link rel="icon" href="https://example.org/img/favicon.ico" type="image/x-icon">
+<link rel="canonical" href="https://cbenitez81.github.io/blogv4/blog/goisforlovers/" />
+<link rel="alternative" href="/blogv4/index.xml" title="Hugo Theme Dream" type="application/atom+xml" />
+
+<link href="https://cdn.bootcss.com/semantic-ui/2.2.14/semantic.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/css/site.css" />
 
 
 </head>
 
-
-<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
-
-  <div id="overflow-container" class="overflow-container">
-    <a class="skip-content" href="#main">Skip to content</a>
-    <header id="site-header" class="site-header" role="banner">
-      <div class='top-navigation'>
-        <div class='container'>
-
-  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
-    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
-
-    <div class="menu">
-
-      <ul id="menu-secondary-items" class="menu-secondary-items">
+<body>
+  <div class="flip-container">
+    <div class="flipper">
+      <section class="front">
         
-        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-          <a href="/categories/go">Go</a>
-        </li>
-        
-
-      </ul>
-
-    </div>
-
+<nav class="ui top secondary menu">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
   </div>
-
-
-  <ul class="social-media-icons">
-
-
-    
-    <li>
-      <a href="full%20profile%20url%20in%20facebook" data-animate-hover="pulse" class="facebook" target="_blank">
-        <i class="fa fa-facebook-square" title="facebook"></i>
-        <span class="screen-reader-text">facebook</span>
-      </a>
-    </li>
-    
-
-    
-    <li>
-      <a href="full%20profile%20url%20in%20googleplus" data-animate-hover="pulse" class="gplus" target="_blank">
-        <i class="fa fa-google-plus" title="googleplus"></i>
-        <span class="screen-reader-text">googleplus</span>
-      </a>
-    </li>
-    
-
-    
-    <li>
-      <a href="full%20profile%20url%20in%20twitter" data-animate-hover="pulse" class="twitter" target="_blank">
-        <i class="fa fa-twitter-square" title="twitter"></i>
-        <span class="screen-reader-text">twitter</span>
-      </a>
-    </li>
-    
-
-    
-    <li>
-      <a href="full%20profile%20url%20in%20instagram" data-animate-hover="pulse" class="twitter" target="_blank">
-        <i class="fa fa-instagram" title="instagram"></i>
-        <span class="screen-reader-text">instagram</span>
-      </a>
-    </li>
-    
-
-    
-    <li>
-      <a href="mailto:email@example.com" data-animate-hover="pulse" class="email">
-        <i class="fa fa-envelope" title="email"></i>
-        <span class="screen-reader-text">email</span>
-      </a>
-    </li>
-    
-
-    
-    <li>
-      <a href="full%20profile%20url%20in%20linkedin" data-animate-hover="pulse" class="linkedin" target="_blank">
-        <i class="fa fa-linkedin" title="linkedin"></i>
-        <span class="screen-reader-text">linkedin</span>
-      </a>
-    </li>
-    
-
-    
-    <li>
-      <a href="full%20profile%20url%20in%20stackoverflow" data-animate-hover="pulse" class="stackoverflow" target="_blank">
-        <i class="fa fa-stack-overflow" title="stackoverflow"></i>
-        <span class="screen-reader-text">stackoverflow</span>
-      </a>
-    </li>
-    
-
-
-    
-    <li>
-      <a href="full%20profile%20url%20in%20github" data-animate-hover="pulse" class="github" target="_blank">
-        <i class="fa fa-github" title="github"></i>
-        <span class="screen-reader-text">github</span>
-      </a>
-    </li>
-    
-
-  </ul></div>
-
-      </div>
-
-      <div class="container">
-        <div id="title-info" class="title-info">
-  <div id='site-title' class='site-title'>
-    
-    <a href="/"> Nederburg </a>
-    </div>
+  <div class="item">
+    <a href="/">
+      <i class="inverted big link home icon" title="Home"></i>
+    </a>
   </div>
-  <button id="toggle-navigation" class="toggle-navigation">
-    <i class="fa fa-bars"></i>
-  </button>
+</nav>
+ 
+<div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
 
-  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
-  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
-    
-    <p class="site-description">A fast &amp; secure theme</p>
-    
-
-    <div class="menu">
-      <ul id="menu-primary-items" class="menu-primary-items">
-        <li id="menu-item" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item">
-          <a href="/">Home</a>
-        </li>
-
-        
-        
-        
-        
-        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item">
-          <a href="/about/">About</a>
-        </li>
-        
-        
-        
-        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item">
-          <a href="/contact/">Get in touch</a>
-        </li>
-        
-        
-      </ul>
-
-
-
-    </div>
-
-  </div>
-
-      </div>
-    </header>
-
-    <div id="main" class="main" role="main">
-
-      
-<div id="loop-container" class="loop-container">
-
-
-<div class="post type-post status-publish format-standard hentry category-standard category-travel entry full-without-featured odd excerpt-1">
-
-
-<div class="entry-meta">
-  <span class="date">April 02</span>	<span> / </span>
-
-  <span class="author">
-    
-    <a href="https://appernetic.io/" title="Posts by Göran Svensson" rel="author">Göran Svensson</a>
-    
-  </span>
-
-
-    
-      <span class="category">
-     <span> / </span>
-
-     <a href="/categories/Go">Go</a>
-  </span>
-   
-
-
-</div>
-<div class='entry-header'>
-<h1 class='entry-title'> (Hu)go Template Primer</h1>
-</div>
-<div class="entry-container">
-<div class="entry-content">
-  <article>
-  
+    <section class="ui secondary top attached black segment">
+      <header>
+        <h1 class="ui header">
+          (Hu)go Template Primer
+          <div class="sub header">@ Unknown Author · Apr 2, 2014 · 7 min read · Update at Apr 2, 2014</div>
+        </h1>
+      </header>
+      <article class="post-content" style="margin-top: 2rem; font-size: 1.4rem;">
 
 <p>Hugo uses the excellent <a href="http://golang.org/&gt;">go</a> <a href="http://golang.org/pkg/html/template/&gt;">html/template</a> library for
 its template engine. It is an extremely lightweight engine that provides a very
@@ -557,237 +396,132 @@ so, such as in this example:</p>
   {{end}}&lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre>
+</article>
+    </section>
 
-          </article>
-</div>
+    <footer class="ui secondary attached segment dream-tags">
+      
+      <span>No Tag</span>
+      
+    </footer>
 
-<div class='entry-meta-bottom'>
-  
-
-<div class="entry-categories"><p><span>Categories</span>
-
-  <a href="/categories/go" title="View all posts in Go">Go</a>
-</p>
-</div>
-
-
-
-<div class="entry-tags"><p><span>Tags</span>
-
-
-</p></div>	</div>
-<div class="author-meta">
-
-<div class="author">
-  <img alt='Göran Svensson' src="https://www.gravatar.com/avatar/855a7543724a3b5c481954390a4bce81?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
-
-	<span>
-  Written by:<a href="https://appernetic.io/" title="Posts by Göran Svensson" rel="author">Göran Svensson</a>        </span>
-</div>
-<div class="bio">
-  
-    <p>Göran is an avid blogger and the founder of <a href='https://appernetic.io/'>Appernetic.io</a>. This is the author bio shown after posts.</p>
-  
-
-
-
-<a class="facebook" target="_blank"
-href="full%20profile%20url%20in%20facebook">
-<i class="fa fa-facebook"
- title="facebook icon"></i>
-</a>
-
-
-
-<a class="googleplus" target="_blank"
-href="full%20profile%20url%20in%20googleplus">
-<i class="fa fa-google-plus"
- title="googleplus icon"></i>
-</a>
-
-
-
-
-      <a class="twitter" target="_blank"
-     href="full%20profile%20url%20in%20twitter">
-    <i class="fa fa-twitter-square"
-       title="twitter icon"></i>
-  </a>
-
-  
-        <a class="linkedin" target="_blank"
-     href="full%20profile%20url%20in%20linkedin">
-    <i class="fa fa-linkedin-square"
-       title="linkedin icon"></i>
-  </a>
-
-
-
-<a class="email" target="_blank"
-href="mailto:email@example.com">
-<i class="fa fa-envelope"
-title="email icon"></i>
-</a>
-
-
-  
-        <a class="instagram" target="_blank"
-     href="full%20profile%20url%20in%20instagram">
-    <i class="fa fa-instagram"
-       title="instagram icon"></i>
-  </a>
-  
-
-  
-  <a class="stackoverflow" target="_blank"
-href="full%20profile%20url%20in%20stackoverflow">
-<i class="fa fa-stack-overflow"
- title="stackoverflow icon"></i>
-</a>
-  
-
-  
-  <a class="github" target="_blank"
-href="full%20profile%20url%20in%20github">
-<i class="fa fa-github"
- title="github icon"></i>
-</a>
-  
-
-    </div>
-</div>	</div>
-</div>
-
-<section id="comments" class="comments">
+    
+    <footer class="ui secondary attached segment">
+      Copyright (c) 2018, g1eny0ung; all rights reserved.
+    </footer>
     
 
-
-
-
-
-
-</section>
-</div>
-
- 
-
-
-
-    </div>
-
-    <footer id="site-footer" class="site-footer" role="contentinfo">
-	<h1>
     
-    <a href=""> Nederburg </a>
-    
-	</h1>
-
-			
-			<p class="site-description">A fast &amp; secure theme</p>
-			
-
-		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
-		<div class="menu">
-
-      <ul id="menu-footer-items" class="menu-footer-items">
-        
-        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a href="/">Home</a></li>
-        
-        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a href="/about/">About</a></li>
-        
-        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a href="/contact/">Get in touch</a></li>
-        
-</ul>
-
-</div>	</div>
-
-<ul class="social-media-icons">
-
-        
-				<li>
-					<a class="facebook" target="_blank"
-					   href="full%20profile%20url%20in%20facebook" >
-						<i class="fa fa-facebook" title="facebook"></i>
-						<span class="screen-reader-text">facebook</span>
-					</a>
-				</li>
-        
-
-        
-				<li>
-					<a class="googleplus" target="_blank"
-					   href="full%20profile%20url%20in%20googleplus" >
-						<i class="fa fa-google-plus" title="googleplus"></i>
-						<span class="screen-reader-text">googleplus</span>
-					</a>
-				</li>
-        
-
-
-        
-        <li>
-        <a href="full%20profile%20url%20in%20twitter"  class="twitter" target="_blank">
-            <i class="fa fa-twitter-square" title="twitter"></i>
-            <span class="screen-reader-text">twitter</span>
-        </a>
-        </li>
-        
-
-        
-        <li>
-        <a href="full%20profile%20url%20in%20instagram"  class="twitter" target="_blank">
-            <i class="fa fa-instagram" title="instagram"></i>
-            <span class="screen-reader-text">instagram</span>
-        </a>
-        </li>
-        
-
-        
-        <li>
-        <a href="mailto:email@example.com"  class="email">
-            <i class="fa fa-envelope" title="email"></i>
-            <span class="screen-reader-text">email</span>
-        </a>
-        </li>
-        
-
-        
-        <li>
-        <a href="full%20profile%20url%20in%20linkedin" class="linkedin" target="_blank">
-            <i class="fa fa-linkedin" title="linkedin"></i>
-            <span class="screen-reader-text">linkedin</span>
-        </a>
-        </li>
-        
-
-        
-        <li>
-        <a href="full%20profile%20url%20in%20stackoverflow"  class="stackoverflow" target="_blank">
-            <i class="fa fa-stack-overflow" title="stackoverflow"></i>
-            <span class="screen-reader-text">stackoverflow</span>
-        </a>
-        </li>
-        
-
-
-        
-        <li>
-        <a href="full%20profile%20url%20in%20github"  class="github" target="_blank">
-            <i class="fa fa-github" title="github"></i>
-            <span class="screen-reader-text">github</span>
-        </a>
-        </li>
-        
-				</ul>	<div class="design-credit">
-		<p>
-			Nederburg Hugo Theme by <a target="_blank" href="https://appernetic.io">Appernetic</a>.</p><p>A port of Tracks by Compete Themes.</p>
-	</div>
-</footer>
 
   </div>
-  <script src="https://example.org/js/jquery.min.js"></script>
-<script src="https://example.org/js/jquerymigrate.js"></script>
-<script src="https://example.org/js/production.min.js"></script>
+  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+
+    <section class="ui top attached center aligned inverted segment">
+  <div class="ui small circular image">
+    
+    <img src="/img/avatar3.svg">
+    
+  </div>
+  <h3 class="ui header">Author&#39;s blog<div class="sub header" style="color: white;">Motto</div>
+  </h3>
+  <a id="tag-category-pop" class="ui red right corner label">
+    <i class="pointing down icon" title="Click this to pop tags and categories"></i>
+  </a>
+</section>
+
+
+
+
+<section class="ui attached inverted segment dream-categories">
+  <div class="ui inverted accordion">
+    
+    <div class="title">
+      <i class="dropdown icon"></i>
+      <a href="/blogv4/categories/go" class="item" style="color: white;">go</a>
+    </div>
+    <div class="content">
+      <div class="ui link inverted list">
+      
+      <div class="item" style="padding-left: 24px;">
+        <i class="cocktail icon"></i>
+        <div class="content">
+          <a href="https://cbenitez81.github.io/blogv4/blog/goisforlovers/" class="item">(Hu)go Template Primer</a>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="ui bottom attached center aligned inverted segment">
+    
+    <p>© 2018 Hugo Theme Dream</p>
+    
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+</section>
+
+
+  </div>
+</div>
+
+      </section>
+      <section class="back">
+        <nav class="ui top secondary menu" style="overflow-x: auto">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  
+  
+  
+  
+  
+</nav>
+
+<div class="ui centered grid about">
+  <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer column">
+
+    <section class="ui stacked segments">
+      <header class="ui inverted segment">
+        <h2 class="ui header">
+          About
+        </h2>
+      </header>
+
+      <article class="ui inverted segment">
+        
+        
+        
+      </article>
+
+      
+      <footer class="ui secondary segment">
+        Copyright (c) 2018, g1eny0ung; all rights reserved.
+      </footer>
+      
+
+      
+        
+      
+    </section>
+
+  </div>
+</div>
+
+      </section>
+    </div>
+  </div>
+
+  
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/bg.js"></script>
+<script src="/js/site.js"></script>
+
+
 
 </body>
+
 </html>
