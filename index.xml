@@ -6,9 +6,28 @@
     <description>Recent content on Nederburg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 30 Mar 2018 09:25:33 -0400</lastBuildDate>
     
 	<atom:link href="https://cbenitez81.github.io/blogv4/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dos</title>
+      <link>https://cbenitez81.github.io/blogv4/post/dos/</link>
+      <pubDate>Fri, 30 Mar 2018 09:25:33 -0400</pubDate>
+      
+      <guid>https://cbenitez81.github.io/blogv4/post/dos/</guid>
+      <description>Anoche tuve un sueño bastante raro, y muy raro porque todo empieza desde antes de que Morfeo me llevara a sus tierras, con uno de los grandes problemas de la humanidad, bueno no de los más grandes, ni tampoco de la humanidad, no tiene que ver con hambre ni pobreza ni violencia de género, tiene que ver con que el internet no funcionaba. Así como lo cuento, fui a dormir con esa sensación de que no pude resolver ese problema tecnológico y que por lo tanto tenia q esperar hasta el otro día para ver si podía ver el marcador del partido de los Clevenland Cavaliers, pude haber usado mi celular, pero decidí irme con esa angustia de problema de primer mundo a la cama.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://cbenitez81.github.io/blogv4/first/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cbenitez81.github.io/blogv4/first/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title></title>
@@ -17,7 +36,7 @@
       
       <guid>https://cbenitez81.github.io/blogv4/post/first/</guid>
       <description>fdsa
-fdafds</description>
+fdafds fdfd</description>
     </item>
     
   </channel>
