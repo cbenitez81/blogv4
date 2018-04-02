@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://cbenitez81.github.io/blogv4/post/peace/</loc>
+    <lastmod>2016-09-27T16:43:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cbenitez81.github.io/blogv4/first/</loc>
   </url>
   
@@ -22,8 +27,32 @@
   </url>
   
   <url>
+    <loc>https://cbenitez81.github.io/blogv4/tags/cheap-poetry/</loc>
+    <lastmod>2018-03-09T09:25:33-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://cbenitez81.github.io/blogv4/</loc>
     <lastmod>2018-03-09T09:25:33-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cbenitez81.github.io/blogv4/categories/fiction/</loc>
+    <lastmod>2018-03-09T09:25:33-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cbenitez81.github.io/blogv4/categories/non-fiction/</loc>
+    <lastmod>2016-09-27T16:43:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cbenitez81.github.io/blogv4/tags/politics/</loc>
+    <lastmod>2016-09-27T16:43:00-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -35,6 +64,7 @@
   
   <url>
     <loc>https://cbenitez81.github.io/blogv4/tags/</loc>
+    <lastmod>2018-03-09T09:25:33-04:00</lastmod>
     <priority>0</priority>
   </url>
   
